@@ -1,13 +1,79 @@
 <!DOCTYPE html>
-<html lang="de"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="de">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Böder SchoolBoard</title>
-<link rel="stylesheet" href="css/style.css"></head>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
 <body>
-<header><h1>🏫 Böder SchoolBoard</h1><div id="date"></div><div id="clock"></div></header>
+
+<header class="header">
+
+    <div class="logo">
+        🏫 Böder SchoolBoard
+    </div>
+
+    <div class="headerRight">
+
+        <div id="weather">
+            Wetter...
+        </div>
+
+        <div id="date">
+            Datum
+        </div>
+
+        <div id="clock">
+            00:00
+        </div>
+
+    </div>
+
+</header>
+
 <main>
-<section><h2>Jojo</h2><table id="jojoTable"></table></section>
-<section><h2>Jooris</h2><table id="joorisTable"></table></section>
-<section><h2>Jule</h2><table id="juleTable"></table></section>
+
+<section class="board" id="jojoBoard">
+
+<h2>Jojo</h2>
+
+<div id="jojoTable"></div>
+
+</section>
+
+
+<section class="board" id="joorisBoard">
+
+<h2>Jooris</h2>
+
+<div id="joorisTable"></div>
+
+</section>
+
+
+<section class="board" id="juleBoard">
+
+<h2>Jule</h2>
+
+<div id="juleTable"></div>
+
+</section>
+
 </main>
+
+<script src="js/config.js"></script>
+<script src="js/clock.js"></script>
+<script src="js/table.js"></script>
+<script src="js/sheets.js"></script>
 <script src="js/app.js"></script>
-</body></html>
+
+</body>
+
+</html>
