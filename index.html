@@ -1,1 +1,92 @@
-<!doctype html><html lang="de"><head><meta charset="utf-8"><title>BoederSchoolBoard</title><link rel="stylesheet" href="css/style.css"></head><body><h1>Böder SchoolBoard v0.2</h1><div id="app"></div><script src="js/config.js"></script><script src="js/app.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Böder SchoolBoard</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <header class="header">
+
+        <div class="logo">
+            🏫 Böder SchoolBoard
+        </div>
+
+        <div class="headerRight">
+
+            <div id="weather">
+                🌤 Wetter wird geladen...
+            </div>
+
+            <div id="date">
+                Datum
+            </div>
+
+            <div id="clock">
+                00:00
+            </div>
+
+        </div>
+
+    </header>
+
+    <main>
+
+        <section class="board">
+
+            <h2>👦 Jojo</h2>
+
+            <div id="jojoTable">
+                Stundenplan wird geladen...
+            </div>
+
+        </section>
+
+        <section class="board">
+
+            <h2>👦 Jooris</h2>
+
+            <div id="joorisTable">
+                Stundenplan wird geladen...
+            </div>
+
+        </section>
+
+        <section class="board">
+
+            <h2>👧 Jule</h2>
+
+            <div id="juleTable">
+                Stundenplan wird geladen...
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <div id="status">
+            🟡 Verbinde mit Google Sheets...
+        </div>
+
+    </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/parser.js"></script>
+    <script src="js/sheets.js"></script>
+    <script src="js/table.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
