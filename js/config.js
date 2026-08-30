@@ -1,29 +1,26 @@
 /* ==========================================
    Böder SchoolBoard
    Version 0.2
-   Konfiguration
 ========================================== */
+
+const SHEET_ID = "1ravA7izByD4IN7aUhxsMNQ7mn185jvYYFLlQUnAXFDM";
 
 const CONFIG = {
 
     appName: "Böder SchoolBoard",
 
-    refreshInterval: 60000, // Aktualisierung alle 60 Sekunden
+    refreshInterval: 60000,
 
     sheets: {
 
-        jojo: "https://docs.google.com/spreadsheets/d/e/2PACX-1vR-l95auLVcne0kWg1Q5_tDhvXXpLeAUDtw_IHix1D_TyaJfSXHBdV6PZZ8DkHK6h_PgvWRtj7A5Vuf/pub?gid=0&single=true&output=csv",
+        jojo:
+            `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&gid=0`,
 
-        jooris: "https://docs.google.com/spreadsheets/d/e/2PACX-1vR-l95auLVcne0kWg1Q5_tDhvXXpLeAUDtw_IHix1D_TyaJfSXHBdV6PZZ8DkHK6h_PgvWRtj7A5Vuf/pub?gid=1233781474&single=true&output=csv",
+        jooris:
+            `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&gid=1233781474`,
 
-        jule: "https://docs.google.com/spreadsheets/d/e/2PACX-1vR-l95auLVcne0kWg1Q5_tDhvXXpLeAUDtw_IHix1D_TyaJfSXHBdV6PZZ8DkHK6h_PgvWRtj7A5Vuf/pub?gid=175444478&single=true&output=csv"
-
-    },
-
-    weather: {
-
-        enabled: false,
-        city: "Marl"
+        jule:
+            `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&gid=175444478`
 
     }
 
