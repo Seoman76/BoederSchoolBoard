@@ -1,1 +1,215 @@
-body{background:#0f172a;color:#fff;font-family:Arial;padding:20px}
+/* ==========================================
+   Böder SchoolBoard
+   Version 0.2.2
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    background:#0f172a;
+    color:#ffffff;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.header{
+
+    height:90px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 35px;
+
+    background:#111827;
+
+    border-bottom:2px solid #1f2937;
+
+}
+
+.logo{
+
+    font-size:34px;
+
+    font-weight:700;
+
+}
+
+.headerRight{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:35px;
+
+}
+
+#weather{
+
+    color:#93c5fd;
+
+    font-size:22px;
+
+}
+
+#date{
+
+    color:#d1d5db;
+
+    font-size:22px;
+
+}
+
+#clock{
+
+    font-size:42px;
+
+    font-weight:bold;
+
+}
+
+/* ==========================================
+   DASHBOARD
+========================================== */
+
+main{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+    padding:25px;
+
+}
+
+/* ==========================================
+   KARTEN
+========================================== */
+
+.board{
+
+    background:#1e293b;
+
+    border-radius:20px;
+
+    box-shadow:0 12px 28px rgba(0,0,0,.35);
+
+    padding:20px;
+
+    transition:all .25s ease;
+
+}
+
+.board:hover{
+
+    transform:translateY(-4px);
+
+}
+
+.board h2{
+
+    text-align:center;
+
+    font-size:32px;
+
+    margin-bottom:18px;
+
+}
+
+/* ==========================================
+   TABELLEN
+========================================== */
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+th{
+
+    background:#334155;
+
+    color:white;
+
+    padding:12px;
+
+    font-size:18px;
+
+}
+
+td{
+
+    border:1px solid #475569;
+
+    padding:10px;
+
+    text-align:center;
+
+    font-size:17px;
+
+}
+
+tr:nth-child(even){
+
+    background:#233247;
+
+}
+
+tr:hover{
+
+    background:#2d425e;
+
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer{
+
+    padding:15px;
+
+    text-align:center;
+
+    color:#94a3b8;
+
+    font-size:18px;
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:1500px){
+
+    main{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
