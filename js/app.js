@@ -43,6 +43,7 @@ async function startDashboard() {
     highlightCurrentLesson("juleTable");
 
     await loadWeather();
+     updateCountdown();
 
     console.log("✅ Böder SchoolBoard gestartet");
 
@@ -55,5 +56,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     setInterval(startDashboard, CONFIG.refreshInterval);
 
     setInterval(loadWeather, 30 * 60 * 1000);
+    setInterval(updateCountdown, 60 * 60 * 1000);
 
 });
