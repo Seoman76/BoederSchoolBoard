@@ -1,6 +1,6 @@
 /* ==========================================
    Böder SchoolBoard
-   Version 0.2.5
+   Version 0.2.6
    Hauptprogramm
 ========================================== */
 
@@ -43,7 +43,8 @@ async function startDashboard() {
     highlightCurrentLesson("juleTable");
 
     await loadWeather();
-     updateCountdown();
+
+    updateCountdown();
 
     console.log("✅ Böder SchoolBoard gestartet");
 
@@ -53,9 +54,13 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     await startDashboard();
 
+    // Stundenpläne aktualisieren
     setInterval(startDashboard, CONFIG.refreshInterval);
 
+    // Wetter alle 30 Minuten
     setInterval(loadWeather, 30 * 60 * 1000);
+
+    // Countdown stündlich aktualisieren
     setInterval(updateCountdown, 60 * 60 * 1000);
 
 });
