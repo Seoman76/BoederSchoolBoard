@@ -1,6 +1,6 @@
 /* ==========================================
    Böder SchoolBoard
-   Version 0.2.3 Foundation
+   Version 0.2.4 Foundation
 ========================================== */
 
 async function loadAndDisplay(url, targetId) {
@@ -44,6 +44,13 @@ async function startDashboard() {
     console.log("✅ Dashboard geladen");
 
 }
+setInterval(() => {
+
+    highlightCurrentLesson("jojoTable");
+    highlightCurrentLesson("joorisTable");
+    highlightCurrentLesson("juleTable");
+
+}, 60000);
 
 document.addEventListener("DOMContentLoaded", () => {
 
