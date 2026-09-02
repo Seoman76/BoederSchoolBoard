@@ -1,6 +1,7 @@
 /* ==========================================
    Böder SchoolBoard
-   Version 0.2.4 Foundation
+   Version 0.2.5
+   Hauptprogramm
 ========================================== */
 
 async function loadAndDisplay(url, targetId) {
@@ -41,21 +42,18 @@ async function startDashboard() {
     highlightCurrentLesson("joorisTable");
     highlightCurrentLesson("juleTable");
 
-    console.log("✅ Dashboard geladen");
+    await loadWeather();
+
+    console.log("✅ Böder SchoolBoard gestartet");
 
 }
-setInterval(() => {
 
-    highlightCurrentLesson("jojoTable");
-    highlightCurrentLesson("joorisTable");
-    highlightCurrentLesson("juleTable");
+document.addEventListener("DOMContentLoaded", async () => {
 
-}, 60000);
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    startDashboard();
+    await startDashboard();
 
     setInterval(startDashboard, CONFIG.refreshInterval);
+
+    setInterval(loadWeather, 30 * 60 * 1000);
 
 });
