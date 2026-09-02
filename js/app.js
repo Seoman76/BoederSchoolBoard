@@ -46,3 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setInterval(startDashboard, CONFIG.refreshInterval);
 
 });
+
+highlightCurrentLesson("jojo-table");
+highlightCurrentLesson("jooris-table");
+highlightCurrentLesson("jule-table");
