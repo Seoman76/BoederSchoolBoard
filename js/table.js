@@ -1,7 +1,6 @@
 /* ==========================================
    Böder SchoolBoard
-   Version 0.2.3
-   Tabellen-Erzeugung
+   Version 0.2.3 Foundation
 ========================================== */
 
 function createTable(data, targetId) {
@@ -10,14 +9,10 @@ function createTable(data, targetId) {
 
     if (!container) return;
 
-    if (!data || data.length === 0) {
-        container.innerHTML = "<p>Keine Daten vorhanden.</p>";
-        return;
-    }
+    container.innerHTML = "";
 
     const table = document.createElement("table");
 
-    // Aktuellen Wochentag bestimmen
     const today = new Date().getDay();
 
     const dayMap = {
@@ -38,27 +33,21 @@ function createTable(data, targetId) {
 
         row.forEach((cell, cellIndex) => {
 
-            const element = document.createElement(
+            const el = document.createElement(
                 rowIndex === 0 ? "th" : "td"
             );
 
-            element.textContent = cell;
+            el.textContent = cell;
 
-            // Position der Zelle speichern
-            element.dataset.row = rowIndex;
-            element.dataset.col = cellIndex;
-
-            // Spalte des heutigen Tages finden
             if (rowIndex === 0 && cell.trim() === todayName) {
                 todayColumn = cellIndex;
             }
 
-            // Heutigen Wochentag hervorheben
             if (todayColumn !== -1 && cellIndex === todayColumn) {
-                element.classList.add("today-column");
+                el.classList.add("today-column");
             }
 
-            tr.appendChild(element);
+            tr.appendChild(el);
 
         });
 
@@ -66,7 +55,6 @@ function createTable(data, targetId) {
 
     });
 
-    container.innerHTML = "";
     container.appendChild(table);
 
 }
