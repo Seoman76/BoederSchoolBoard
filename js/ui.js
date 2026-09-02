@@ -1,35 +1,15 @@
 /* ==========================================
-   Böder SchoolBoard
-   Version 0.2.2
-   UI-Helfer
+   UI Funktionen
 ========================================== */
 
-function setStatus(message, type = "ok") {
+function setStatus(message){
 
     const status = document.getElementById("status");
 
-    if (!status) return;
+    if(status){
 
-    status.textContent = message;
+        status.textContent = message;
 
-    status.className = "";
-
-    if (type === "ok") {
-        status.classList.add("status-ok");
-    } else {
-        status.classList.add("status-error");
     }
-}
 
-function showLoading(targetId) {
-
-    const target = document.getElementById(targetId);
-
-    if (!target) return;
-
-    target.innerHTML = `
-        <div style="padding:20px;text-align:center;">
-            ⏳ Lade Stundenplan...
-        </div>
-    `;
 }
