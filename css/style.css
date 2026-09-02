@@ -214,12 +214,15 @@ footer{
 
 }
 
-.today-column{
+/* ==========================================
+   HEUTIGEN WOCHENTAG HERVORHEBEN
+========================================== */
 
-    background:#2563eb !important;
+.today-column {
 
-    color:white;
-
-    font-weight:bold;
+    background: #2563eb !important;
+    color: white;
+    font-weight: bold;
 
 }
+
