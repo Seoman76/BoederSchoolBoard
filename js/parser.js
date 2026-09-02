@@ -1,28 +1,16 @@
+
+
 /* ==========================================
-   Böder SchoolBoard
-   Version 0.2.1
    CSV Parser
 ========================================== */
 
-function parseCSV(csvText) {
+function parseCSV(text){
 
-    const lines = csvText
+    return text
         .trim()
-        .split(/\r?\n/);
-
-    const delimiter = lines[0].includes(";") ? ";" : ",";
-
-    return lines.map(line => {
-
-        return line
-            .split(delimiter)
-            .map(cell =>
-                cell
-                    .trim()
-                    .replace(/^"/, "")
-                    .replace(/"$/, "")
-            );
-
-    });
+        .split("\n")
+        .map(row =>
+            row.split(",").map(cell => cell.trim())
+        );
 
 }
