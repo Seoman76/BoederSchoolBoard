@@ -225,4 +225,16 @@ footer{
     font-weight: bold;
 
 }
+/* ==========================================
+   AKTUELLE UNTERRICHTSSTUNDE
+========================================== */
 
+.current-lesson{
+
+    background:#16a34a !important;
+
+    color:white;
+
+    font-weight:bold;
+
+}
