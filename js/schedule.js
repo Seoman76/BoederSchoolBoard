@@ -1,66 +1,55 @@
 /* ==========================================
    Böder SchoolBoard
-   Version 0.2.3
-   Aktuelle Unterrichtsstunde erkennen
+   Version 0.2.3 Foundation
 ========================================== */
 
-function highlightCurrentLesson(containerId) {
+function highlightCurrentLesson(containerId){
 
-    const container = document.getElementById(containerId);
+    const container=document.getElementById(containerId);
 
-    if (!container) return;
+    if(!container) return;
 
-    const rows = container.querySelectorAll("table tr");
+    const table=container.querySelector("table");
 
-    if (rows.length < 2) return;
+    if(!table) return;
 
-    const now = new Date();
+    const rows=table.querySelectorAll("tr");
 
-    const currentMinutes =
-        now.getHours() * 60 +
-        now.getMinutes();
+    const weekday=new Date().getDay();
 
-    // Samstag/Sonntag ignorieren
-    const weekday = now.getDay();
+    if(weekday<1 || weekday>5) return;
 
-    if (weekday === 0 || weekday === 6) return;
+    const currentMinutes=
+        new Date().getHours()*60+
+        new Date().getMinutes();
 
-    // Montag = Spalte 2
-    const dayColumn = weekday + 1;
+    rows.forEach((row,index)=>{
 
-    rows.forEach((row, index) => {
+        if(index===0) return;
 
-        if (index === 0) return;
+        const cells=row.querySelectorAll("td");
 
-        const cells = row.querySelectorAll("td");
+        if(cells.length<7) return;
 
-        if (cells.length < 7) return;
+        const value=cells[1].textContent.trim();
 
-        const time = cells[1].textContent.trim();
+        const match=value.match(/(\d\d):(\d\d)-(\d\d):(\d\d)/);
 
-        if (!time.includes("-")) return;
+        if(!match) return;
 
-        const parts = time.split("-");
+        const start=
+            Number(match[1])*60+
+            Number(match[2]);
 
-        const start = parts[0].split(":");
-        const end = parts[1].split(":");
+        const end=
+            Number(match[3])*60+
+            Number(match[4]);
 
-        const startMinutes =
-            parseInt(start[0]) * 60 +
-            parseInt(start[1]);
-
-        const endMinutes =
-            parseInt(end[0]) * 60 +
-            parseInt(end[1]);
-
-        if (
-            currentMinutes >= startMinutes &&
-            currentMinutes < endMinutes
-        ) {
+        if(currentMinutes>=start && currentMinutes<end){
 
             cells[0].classList.add("current-lesson");
             cells[1].classList.add("current-lesson");
-            cells[dayColumn].classList.add("current-lesson");
+            cells[weekday+1].classList.add("current-lesson");
 
         }
 
