@@ -17,9 +17,9 @@ function createTable(data, targetId) {
 
     const table = document.createElement("table");
 
+    // Aktuellen Wochentag bestimmen
     const today = new Date().getDay();
 
-    // Sonntag = 0
     const dayMap = {
         1: "Montag",
         2: "Dienstag",
@@ -44,13 +44,17 @@ function createTable(data, targetId) {
 
             element.textContent = cell;
 
-            // Header prüfen
-            if (rowIndex === 0 && cell === todayName) {
+            // Position der Zelle speichern
+            element.dataset.row = rowIndex;
+            element.dataset.col = cellIndex;
+
+            // Spalte des heutigen Tages finden
+            if (rowIndex === 0 && cell.trim() === todayName) {
                 todayColumn = cellIndex;
             }
 
-            // ganze Spalte markieren
-            if (cellIndex === todayColumn && todayColumn !== -1) {
+            // Heutigen Wochentag hervorheben
+            if (todayColumn !== -1 && cellIndex === todayColumn) {
                 element.classList.add("today-column");
             }
 
