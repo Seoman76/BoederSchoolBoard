@@ -1,26 +1,30 @@
 /* ==========================================
    Böder SchoolBoard
-   Version 0.2.1
-   Hauptprogramm
+   Version 0.2.3 Foundation
 ========================================== */
 
 async function loadAndDisplay(url, targetId) {
 
     const data = await loadSheet(url);
 
-    if (data) {
-        createTable(data, targetId);
-    } else {
-        const target = document.getElementById(targetId);
+    const target = document.getElementById(targetId);
 
-        if (target) {
-            target.innerHTML = `
-                <div style="padding:20px;color:#ff8080;">
-                    ❌ Stundenplan konnte nicht geladen werden.
-                </div>
-            `;
-        }
+    if (!target) return;
+
+    if (!data) {
+
+        target.innerHTML = `
+            <div style="padding:20px;color:#ef4444;">
+                ❌ Stundenplan konnte nicht geladen werden.
+            </div>
+        `;
+
+        return;
+
     }
+
+    createTable(data, targetId);
+
 }
 
 async function startDashboard() {
@@ -28,14 +32,16 @@ async function startDashboard() {
     await Promise.all([
 
         loadAndDisplay(CONFIG.sheets.jojo, "jojoTable"),
-
         loadAndDisplay(CONFIG.sheets.jooris, "joorisTable"),
-
         loadAndDisplay(CONFIG.sheets.jule, "juleTable")
 
     ]);
 
-    console.log("✅ Böder SchoolBoard gestartet");
+    highlightCurrentLesson("jojoTable");
+    highlightCurrentLesson("joorisTable");
+    highlightCurrentLesson("juleTable");
+
+    console.log("✅ Dashboard geladen");
 
 }
 
@@ -46,7 +52,3 @@ document.addEventListener("DOMContentLoaded", () => {
     setInterval(startDashboard, CONFIG.refreshInterval);
 
 });
-
-highlightCurrentLesson("jojo-table");
-highlightCurrentLesson("jooris-table");
-highlightCurrentLesson("jule-table");
