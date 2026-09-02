@@ -1,10 +1,12 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="de">
 
 <head>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>Böder SchoolBoard</title>
 
@@ -13,6 +15,10 @@
 </head>
 
 <body>
+
+    <!-- ==========================================
+         HEADER
+    =========================================== -->
 
     <header class="header">
 
@@ -31,12 +37,16 @@
             </div>
 
             <div id="clock">
-                00:00
+                --:--
             </div>
 
         </div>
 
     </header>
+
+    <!-- ==========================================
+         DASHBOARD
+    =========================================== -->
 
     <main>
 
@@ -45,7 +55,9 @@
             <h2>👦 Jojo</h2>
 
             <div id="jojoTable">
-                Stundenplan wird geladen...
+
+                Lade Stundenplan...
+
             </div>
 
         </section>
@@ -55,7 +67,9 @@
             <h2>👦 Jooris</h2>
 
             <div id="joorisTable">
-                Stundenplan wird geladen...
+
+                Lade Stundenplan...
+
             </div>
 
         </section>
@@ -65,20 +79,32 @@
             <h2>👧 Jule</h2>
 
             <div id="juleTable">
-                Stundenplan wird geladen...
+
+                Lade Stundenplan...
+
             </div>
 
         </section>
 
     </main>
 
+    <!-- ==========================================
+         STATUS
+    =========================================== -->
+
     <footer>
 
         <div id="status">
-            🟡 Verbinde mit Google Sheets...
+
+            ✅ Böder SchoolBoard v0.2.3 Foundation
+
         </div>
 
     </footer>
+
+    <!-- ==========================================
+         JAVASCRIPT
+    =========================================== -->
 
     <script src="js/config.js"></script>
     <script src="js/clock.js"></script>
