@@ -1,19 +1,31 @@
 /* ==========================================
-   Böder SchoolBoard
-   Version 0.2
    Google Sheets Loader
 ========================================== */
 
-async function loadSheet(url) {
+async function loadSheet(url){
 
-    const response = await fetch(url);
+    try{
 
-    if (!response.ok) {
-        throw new Error("Google Sheet konnte nicht geladen werden.");
+        const response = await fetch(url);
+
+        if(!response.ok){
+
+            throw new Error("CSV konnte nicht geladen werden.");
+
+        }
+
+        const csv = await response.text();
+
+        return parseCSV(csv);
+
     }
 
-    const text = await response.text();
+    catch(error){
 
-    return text;
+        console.error(error);
+
+        return null;
+
+    }
 
 }
