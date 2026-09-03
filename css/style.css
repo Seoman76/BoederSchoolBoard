@@ -98,8 +98,6 @@ main{
 table{
     width:100%;
     table-layout:fixed;
-    table-layout:fixed;
-
     border-collapse:collapse;
 }
 
