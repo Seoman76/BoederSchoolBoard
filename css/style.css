@@ -1,6 +1,6 @@
 /* ==========================================
    Böder SchoolBoard
-   Version 0.3.0 Alpha
+   Version 0.3.0 Beta
 ========================================== */
 
 *{
@@ -10,117 +10,55 @@
 }
 
 body{
-
-    font-family:
-        "Segoe UI",
-        Arial,
-        Helvetica,
-        sans-serif;
-
+    font-family:"Segoe UI",Arial,Helvetica,sans-serif;
     background:#0f172a;
-    color:#ffffff;
-
+    color:#fff;
 }
 
 /* ==========================================
    HEADER
 ========================================== */
 
-.header{
-
-    height:90px;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    padding:0 35px;
-
-    background:#111827;
-
-    border-bottom:2px solid #1f2937;
-
-}
-
-.logo{
-
-    font-size:34px;
-
-    font-weight:700;
-
-}
-
 .headerRight{
-
     display:flex;
-
-    align-items:center;
-
-    gap:25px;
-
+    justify-content:flex-end;
+    align-items:flex-start;
+    gap:28px;
     padding:20px 30px 10px;
 }
 
-/* ==========================================
-   HEADER INFOS
-========================================== */
-
 .headerInfo{
-
     display:flex;
-
     flex-direction:column;
-
-    gap:6px;
-
+    gap:8px;
     align-items:flex-end;
-
 }
 
 .headerInfo div{
-
     background:#1e293b;
-
-    padding:6px 14px;
-
-    border-radius:10px;
-
-    font-size:15px;
-
-    min-width:240px;
-
-    text-align:right;
-
+    padding:8px 16px;
+    border-radius:12px;
+    min-width:250px;
+    font-size:17px;
 }
 
 .headerTime{
-
     text-align:right;
-
-}
-
-#weather{
-
-    color:#7dd3fc;
-    font-size:18px;
-
 }
 
 #date{
-
     color:#d1d5db;
-    font-size:18px;
+    font-size:22px;
     margin-bottom:6px;
-
 }
 
 #clock{
+    font-size:46px;
+    font-weight:700;
+}
 
-    font-size:40px;
-    font-weight:bold;
-
+#weather{
+    color:#7dd3fc;
 }
 
 /* ==========================================
@@ -128,15 +66,10 @@ body{
 ========================================== */
 
 main{
-
     display:grid;
-
     grid-template-columns:repeat(3,1fr);
-
-    gap:18px;
-
-    padding:18px;
-
+    gap:20px;
+    padding:20px;
 }
 
 /* ==========================================
@@ -144,143 +77,99 @@ main{
 ========================================== */
 
 .board{
-
     background:#1e293b;
-
     border-radius:18px;
-
     overflow:hidden;
-
-    box-shadow:0 8px 18px rgba(0,0,0,.30);
-
+    box-shadow:0 10px 25px rgba(0,0,0,.35);
 }
 
 .board h2{
-
     background:#334155;
-
-    padding:12px;
-
+    padding:14px;
     text-align:center;
-
-    font-size:22px;
-
+    font-size:24px;
     border-bottom:1px solid #475569;
-
 }
 
 /* ==========================================
-   TABELLEN
+   STUNDENPLAN
 ========================================== */
 
 table{
-
     width:100%;
-
     table-layout:fixed;
-
     border-collapse:collapse;
-
 }
 
 th{
-
     background:#475569;
-
-    padding:7px 4px;
-
-    font-size:13px;
-
     border:1px solid #64748b;
-
+    padding:9px 4px;
+    font-size:15px;
+    font-weight:700;
 }
 
 td{
-
-    padding:6px 3px;
-
     border:1px solid #475569;
-
+    padding:8px 4px;
     text-align:center;
-
-    font-size:13px;
-
-    word-break:break-word;
-
-    line-height:1.2;
-
+    font-size:15px;
+    line-height:1.25;
+    overflow-wrap:anywhere;
 }
 
 tr:nth-child(even){
-
     background:#233247;
-
 }
 
 tr:hover{
-
     background:#31455f;
+}
 
+/* Erste Spalte (Uhrzeiten) schmaler */
+
+th:first-child,
+td:first-child{
+    width:64px;
+    font-size:13px;
+    font-weight:600;
+    color:#cbd5e1;
 }
 
 /* ==========================================
-   HEUTIGE SPALTE
+   MARKIERUNGEN
 ========================================== */
 
 .today-column{
-
     background:#2563eb !important;
-
-    color:white !important;
-
+    color:#fff !important;
     font-weight:bold;
-
 }
-
-/* ==========================================
-   AKTUELLE UNTERRICHTSSTUNDE
-========================================== */
 
 .current-lesson{
-
     background:#16a34a !important;
-
-    color:#ffffff !important;
-
+    color:#fff !important;
     font-weight:bold;
-
-    transition:.3s;
-
 }
 
 /* ==========================================
-   STATUS
+   FOOTER
 ========================================== */
 
 footer{
-
     text-align:center;
-
-    padding:12px;
-
-    color:#94a3b8;
-
+    padding:14px;
     border-top:2px solid #1f2937;
-
+    color:#94a3b8;
     font-size:14px;
-
 }
 
 .status-ok{
-
     color:#4ade80;
-
 }
 
 .status-error{
-
     color:#ef4444;
-
 }
 
 /* ==========================================
@@ -288,17 +177,12 @@ footer{
 ========================================== */
 
 ::-webkit-scrollbar{
-
     width:10px;
-
 }
 
 ::-webkit-scrollbar-thumb{
-
     background:#475569;
-
     border-radius:8px;
-
 }
 
 /* ==========================================
@@ -308,9 +192,7 @@ footer{
 @media(max-width:1500px){
 
     main{
-
         grid-template-columns:1fr;
-
     }
 
 }
