@@ -1,6 +1,6 @@
 /* ==========================================
    Böder SchoolBoard
-   Version 0.2.4 Smart Dashboard
+   Version 0.3.0 Alpha
 ========================================== */
 
 *{
@@ -60,6 +60,7 @@ body{
 
     gap:25px;
 
+    padding:20px 30px 10px;
 }
 
 /* ==========================================
@@ -86,7 +87,7 @@ body{
 
     border-radius:10px;
 
-    font-size:16px;
+    font-size:15px;
 
     min-width:240px;
 
@@ -100,42 +101,24 @@ body{
 
 }
 
-#clock{
-
-    font-size:42px;
-
-    font-weight:bold;
-
-}
-
-#date{
-
-    margin-bottom:8px;
-
-    color:#cbd5e1;
-
-}
-
 #weather{
 
     color:#7dd3fc;
-
-    font-size:20px;
+    font-size:18px;
 
 }
 
 #date{
 
     color:#d1d5db;
-
-    font-size:20px;
+    font-size:18px;
+    margin-bottom:6px;
 
 }
 
 #clock{
 
-    font-size:42px;
-
+    font-size:40px;
     font-weight:bold;
 
 }
@@ -150,9 +133,9 @@ main{
 
     grid-template-columns:repeat(3,1fr);
 
-    gap:25px;
+    gap:18px;
 
-    padding:25px;
+    padding:18px;
 
 }
 
@@ -168,7 +151,7 @@ main{
 
     overflow:hidden;
 
-    box-shadow:0 10px 25px rgba(0,0,0,.35);
+    box-shadow:0 8px 18px rgba(0,0,0,.30);
 
 }
 
@@ -176,11 +159,11 @@ main{
 
     background:#334155;
 
-    padding:16px;
+    padding:12px;
 
     text-align:center;
 
-    font-size:28px;
+    font-size:22px;
 
     border-bottom:1px solid #475569;
 
@@ -194,6 +177,8 @@ table{
 
     width:100%;
 
+    table-layout:fixed;
+
     border-collapse:collapse;
 
 }
@@ -202,9 +187,9 @@ th{
 
     background:#475569;
 
-    padding:12px;
+    padding:7px 4px;
 
-    font-size:17px;
+    font-size:13px;
 
     border:1px solid #64748b;
 
@@ -212,13 +197,17 @@ th{
 
 td{
 
-    padding:10px;
+    padding:6px 3px;
 
     border:1px solid #475569;
 
     text-align:center;
 
-    font-size:16px;
+    font-size:13px;
+
+    word-break:break-word;
+
+    line-height:1.2;
 
 }
 
@@ -272,11 +261,13 @@ footer{
 
     text-align:center;
 
-    padding:15px;
+    padding:12px;
 
     color:#94a3b8;
 
     border-top:2px solid #1f2937;
+
+    font-size:14px;
 
 }
 
