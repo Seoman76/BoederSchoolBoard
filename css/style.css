@@ -196,3 +196,9 @@ footer{
     }
 
 }
+
+
+/* v0.3.0 Beta */
+.board{border:2px solid #3b82f6;}
+.board h2{font-size:24px;}
+td{font-size:15px;}
