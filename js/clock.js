@@ -1,6 +1,6 @@
 /* ==========================================
    Böder SchoolBoard
-   Version 0.3.0 Beta
+   Version 0.2.3 Foundation
 ========================================== */
 
 function updateClock(){
