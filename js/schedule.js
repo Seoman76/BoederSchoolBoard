@@ -1,6 +1,6 @@
 /* ==========================================
    Böder SchoolBoard
-   Version 0.2.4
+   Version 0.3.1
    Aktuelle Unterrichtsstunde markieren
 ========================================== */
 
@@ -14,7 +14,6 @@ function highlightCurrentLesson(containerId) {
 
     if (!table) return;
 
-    // Alte Markierungen entfernen
     table.querySelectorAll(".current-lesson").forEach(cell => {
         cell.classList.remove("current-lesson");
     });
@@ -25,21 +24,28 @@ function highlightCurrentLesson(containerId) {
 
     const weekday = now.getDay();
 
-    // Nur Montag bis Freitag
     if (weekday < 1 || weekday > 5) return;
 
     const currentMinutes =
         now.getHours() * 60 +
         now.getMinutes();
 
-    // Montag = Spalte 2
-    const dayColumn = weekday + 1;
+    const isJooris = containerId === "joorisTable";
 
     rows.forEach((row, index) => {
 
         if (index === 0) return;
 
         const cells = row.querySelectorAll("td");
+
+        if (isJooris) {
+
+            // Jooris besitzt keine Zeitspalte.
+            // Deshalb kann keine aktuelle Stunde
+            // automatisch bestimmt werden.
+            return;
+
+        }
 
         if (cells.length < 7) return;
 
@@ -59,11 +65,12 @@ function highlightCurrentLesson(containerId) {
             Number(match[3]) * 60 +
             Number(match[4]);
 
-        if (currentMinutes >= start && currentMinutes < end) {
+        if (currentMinutes >= start &&
+            currentMinutes < end) {
 
             cells[0].classList.add("current-lesson");
             cells[1].classList.add("current-lesson");
-            cells[dayColumn].classList.add("current-lesson");
+            cells[weekday + 1].classList.add("current-lesson");
 
         }
 
