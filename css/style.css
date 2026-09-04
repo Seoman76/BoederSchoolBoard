@@ -1,6 +1,6 @@
 /* ==========================================
    Böder SchoolBoard
-   Version 0.3.0 Beta
+   Version 0.3.2 Layout
 ========================================== */
 
 *{
@@ -24,7 +24,7 @@ body{
     justify-content:flex-end;
     align-items:flex-start;
     gap:28px;
-    padding:20px 30px 10px;
+    padding:18px 28px 8px;
 }
 
 .headerInfo{
@@ -38,8 +38,8 @@ body{
     background:#1e293b;
     padding:8px 16px;
     border-radius:12px;
-    min-width:250px;
-    font-size:15px;
+    min-width:240px;
+    font-size:17px;
 }
 
 .headerTime{
@@ -48,12 +48,12 @@ body{
 
 #date{
     color:#d1d5db;
-    font-size:22px;
-    margin-bottom:6px;
+    font-size:21px;
+    margin-bottom:5px;
 }
 
 #clock{
-    font-size:46px;
+    font-size:44px;
     font-weight:700;
 }
 
@@ -68,8 +68,8 @@ body{
 main{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:20px;
-    padding:20px;
+    gap:16px;
+    padding:16px;
 }
 
 /* ==========================================
@@ -80,14 +80,15 @@ main{
     background:#1e293b;
     border-radius:18px;
     overflow:hidden;
-    box-shadow:0 10px 25px rgba(0,0,0,.35);
+    border:2px solid #3b82f6;
+    box-shadow:0 8px 20px rgba(0,0,0,.35);
 }
 
 .board h2{
     background:#334155;
-    padding:14px;
+    padding:12px;
     text-align:center;
-    font-size:24px;
+    font-size:22px;
     border-bottom:1px solid #475569;
 }
 
@@ -104,18 +105,37 @@ table{
 th{
     background:#475569;
     border:1px solid #64748b;
-    padding:9px 4px;
-    font-size:15px;
+    padding:8px 2px;
+    font-size:14px;
     font-weight:700;
 }
 
 td{
     border:1px solid #475569;
-    padding:8px 4px;
+    padding:7px 2px;
     text-align:center;
-    font-size:15px;
-    line-height:1.25;
-    overflow-wrap:anywhere;
+    font-size:14px;
+    line-height:1.2;
+    overflow-wrap:break-word;
+}
+
+/* Erste Spalte = Stunde */
+
+th:first-child,
+td:first-child{
+    width:42px;
+    font-size:12px;
+    font-weight:700;
+    color:#cbd5e1;
+}
+
+/* Zweite Spalte = Uhrzeit */
+
+th:nth-child(2),
+td:nth-child(2){
+    width:74px;
+    font-size:12px;
+    color:#cbd5e1;
 }
 
 tr:nth-child(even){
@@ -126,29 +146,19 @@ tr:hover{
     background:#31455f;
 }
 
-/* Erste Spalte (Uhrzeiten) schmaler */
-
-th:first-child,
-td:first-child{
-    width:64px;
-    font-size:13px;
-    font-weight:600;
-    color:#cbd5e1;
-}
-
 /* ==========================================
    MARKIERUNGEN
 ========================================== */
 
 .today-column{
     background:#2563eb !important;
-    color:#fff !important;
+    color:white !important;
     font-weight:bold;
 }
 
 .current-lesson{
     background:#16a34a !important;
-    color:#fff !important;
+    color:white !important;
     font-weight:bold;
 }
 
@@ -158,18 +168,10 @@ td:first-child{
 
 footer{
     text-align:center;
-    padding:14px;
+    padding:12px;
     border-top:2px solid #1f2937;
     color:#94a3b8;
-    font-size:14px;
-}
-
-.status-ok{
-    color:#4ade80;
-}
-
-.status-error{
-    color:#ef4444;
+    font-size:13px;
 }
 
 /* ==========================================
@@ -196,9 +198,3 @@ footer{
     }
 
 }
-
-
-/* v0.3.0 Beta */
-.board{border:2px solid #3b82f6;}
-.board h2{font-size:24px;}
-td{font-size:15px;}
