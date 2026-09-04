@@ -1,6 +1,6 @@
 /* ==========================================
    Böder SchoolBoard
-   Version 0.3.0 Beta
+   Version 0.3.1
 ========================================== */
 
 function createTable(data, targetId) {
@@ -11,7 +11,20 @@ function createTable(data, targetId) {
 
     container.innerHTML = "";
 
+    // ------------------------------------------
+    // Daten vorbereiten
+    // ------------------------------------------
+
+    const tableData =
+        targetId === "joorisTable"
+            ? data.map(row => row.slice(2))
+            : data;
+
     const table = document.createElement("table");
+
+    // ------------------------------------------
+    // Aktuellen Wochentag bestimmen
+    // ------------------------------------------
 
     const today = new Date().getDay();
 
@@ -27,28 +40,35 @@ function createTable(data, targetId) {
 
     let todayColumn = -1;
 
-    data.forEach((row, rowIndex) => {
+    // ------------------------------------------
+    // Tabelle erstellen
+    // ------------------------------------------
+
+    tableData.forEach((row, rowIndex) => {
 
         const tr = document.createElement("tr");
 
         row.forEach((cell, cellIndex) => {
-            if(targetId==="joorisTable" && (cellIndex===0||cellIndex===1)) return;
 
-            const el = document.createElement(
+            const element = document.createElement(
                 rowIndex === 0 ? "th" : "td"
             );
 
-            el.textContent = cell;
+            element.textContent = cell;
+
+            // Spalte des heutigen Tages merken
 
             if (rowIndex === 0 && cell.trim() === todayName) {
                 todayColumn = cellIndex;
             }
 
-            if (todayColumn !== -1 && cellIndex === todayColumn) {
-                el.classList.add("today-column");
+            // Heutigen Tag hervorheben
+
+            if (cellIndex === todayColumn) {
+                element.classList.add("today-column");
             }
 
-            tr.appendChild(el);
+            tr.appendChild(element);
 
         });
 
