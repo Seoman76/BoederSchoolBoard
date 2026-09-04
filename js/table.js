@@ -1,6 +1,6 @@
 /* ==========================================
    Böder SchoolBoard
-   Version 0.3.0 Beta
+   Version 0.2.3 Foundation
 ========================================== */
 
 function createTable(data, targetId) {
@@ -32,7 +32,6 @@ function createTable(data, targetId) {
         const tr = document.createElement("tr");
 
         row.forEach((cell, cellIndex) => {
-            if(targetId==="joorisTable" && (cellIndex===0||cellIndex===1)) return;
 
             const el = document.createElement(
                 rowIndex === 0 ? "th" : "td"
