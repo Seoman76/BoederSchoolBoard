@@ -11,21 +11,9 @@ function createTable(data, targetId) {
 
     container.innerHTML = "";
 
-    // ------------------------------------------
-    // Daten vorbereiten
-    // ------------------------------------------
-
-    const tableData =
-        targetId === "joorisTable"
-            ? data.map(row => row.slice(2))
-            : data;
-
     const table = document.createElement("table");
 
-    // ------------------------------------------
     // Aktuellen Wochentag bestimmen
-    // ------------------------------------------
-
     const today = new Date().getDay();
 
     const dayMap = {
@@ -40,11 +28,8 @@ function createTable(data, targetId) {
 
     let todayColumn = -1;
 
-    // ------------------------------------------
     // Tabelle erstellen
-    // ------------------------------------------
-
-    tableData.forEach((row, rowIndex) => {
+    data.forEach((row, rowIndex) => {
 
         const tr = document.createElement("tr");
 
@@ -56,14 +41,12 @@ function createTable(data, targetId) {
 
             element.textContent = cell;
 
-            // Spalte des heutigen Tages merken
-
+            // Heutige Spalte merken
             if (rowIndex === 0 && cell.trim() === todayName) {
                 todayColumn = cellIndex;
             }
 
             // Heutigen Tag hervorheben
-
             if (cellIndex === todayColumn) {
                 element.classList.add("today-column");
             }
