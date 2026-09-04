@@ -1,6 +1,6 @@
 /* ==========================================
    Böder SchoolBoard
-   Version 0.3.0 Beta
+   Version 0.3.3
 ========================================== */
 
 function createTable(data, targetId) {
@@ -28,6 +28,13 @@ function createTable(data, targetId) {
     let todayColumn = -1;
 
     data.forEach((row, rowIndex) => {
+
+        if (targetId === "juleTable" && rowIndex > 6) return;
+
+        // Header + Stunden 1-6 für Jule anzeigen
+        if (targetId === "juleTable" && rowIndex > 6) {
+            return;
+        }
 
         const tr = document.createElement("tr");
 
