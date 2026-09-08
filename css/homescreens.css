@@ -1,0 +1,193 @@
+/* ==========================================
+   Böder SchoolBoard
+   Homescreens Edition
+========================================== */
+
+html,
+body {
+
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: #111827;
+    color: white;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    overflow: hidden;
+
+}
+
+body.homescreens {
+
+    display: flex;
+
+}
+
+.dashboard {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+
+    width: 100vw;
+    height: 100vh;
+
+    padding: 18px;
+
+    box-sizing: border-box;
+
+}
+
+.plan-card {
+
+    display: flex;
+    flex-direction: column;
+
+    background: #1f2937;
+
+    border-radius: 18px;
+
+    padding: 14px;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.35);
+
+    overflow: hidden;
+
+}
+
+.plan-card h2 {
+
+    margin: 0 0 14px 0;
+
+    text-align: center;
+
+    font-size: 2rem;
+
+    color: #60a5fa;
+
+    letter-spacing: 1px;
+
+}
+
+.table-container {
+
+    flex: 1;
+
+    overflow: hidden;
+
+}
+
+.table-container table {
+
+    width: 100%;
+
+    height: 100%;
+
+    border-collapse: collapse;
+
+    table-layout: fixed;
+
+}
+
+.table-container th {
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 1.1rem;
+
+    padding: 12px;
+
+}
+
+.table-container td {
+
+    font-size: 1rem;
+
+    padding: 10px 6px;
+
+    text-align: center;
+
+    border: 1px solid #374151;
+
+}
+
+.table-container tr:nth-child(even) {
+
+    background: rgba(255,255,255,.03);
+
+}
+
+.today-column {
+
+    background: #1d4ed8 !important;
+
+    color: white;
+
+    font-weight: bold;
+
+}
+
+.current-lesson {
+
+    background: #22c55e !important;
+
+    color: black !important;
+
+    font-weight: bold;
+
+}
+
+/* Tablet */
+
+@media (max-width:1200px){
+
+.dashboard{
+
+    grid-template-columns:1fr;
+
+    overflow:auto;
+
+}
+
+.plan-card{
+
+    min-height:520px;
+
+}
+
+}
+
+/* Sehr große Monitore */
+
+@media (min-width:1800px){
+
+.plan-card h2{
+
+    font-size:2.5rem;
+
+}
+
+.table-container th{
+
+    font-size:1.35rem;
+
+}
+
+.table-container td{
+
+    font-size:1.2rem;
+
+    padding:14px;
+
+}
+
+}
