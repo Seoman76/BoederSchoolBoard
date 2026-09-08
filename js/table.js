@@ -1,6 +1,7 @@
 /* ==========================================
    Böder SchoolBoard
-   Version 0.3.3
+   table.js
+   Version 1.0
 ========================================== */
 
 function createTable(data, targetId) {
@@ -13,25 +14,22 @@ function createTable(data, targetId) {
 
     const table = document.createElement("table");
 
-    const today = new Date().getDay();
+    const dayNames = [
+        "",
+        "montag",
+        "dienstag",
+        "mittwoch",
+        "donnerstag",
+        "freitag"
+    ];
 
-    const dayMap = {
-        1: "Montag",
-        2: "Dienstag",
-        3: "Mittwoch",
-        4: "Donnerstag",
-        5: "Freitag"
-    };
-
-    const todayName = dayMap[today];
+    const todayText = dayNames[new Date().getDay()];
 
     let todayColumn = -1;
 
     data.forEach((row, rowIndex) => {
 
-        if (targetId === "juleTable" && rowIndex > 6) return;
-
-        // Header + Stunden 1-6 für Jule anzeigen
+        // Bei Jule nur Header + Stunden 1–6 anzeigen
         if (targetId === "juleTable" && rowIndex > 6) {
             return;
         }
@@ -40,28 +38,17 @@ function createTable(data, targetId) {
 
         row.forEach((cell, cellIndex) => {
 
-            const el = document.createElement(
+            const element = document.createElement(
                 rowIndex === 0 ? "th" : "td"
             );
 
-            el.textContent = cell;
+            element.textContent = cell;
 
-            if (rowIndex === 0 && cell.trim() === todayName) {
-                todayColumn = cellIndex;
-            }
+            // Aktuellen Wochentag im Header finden
+            if (rowIndex === 0) {
 
-            if (todayColumn !== -1 && cellIndex === todayColumn) {
-                el.classList.add("today-column");
-            }
+                const text = String(cell)
+                    .trim()
+                    .toLowerCase();
 
-            tr.appendChild(el);
-
-        });
-
-        table.appendChild(tr);
-
-    });
-
-    container.appendChild(table);
-
-}
+                if (text.includes(today
