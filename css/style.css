@@ -1,210 +1,77 @@
-/* ==========================================
-   Böder SchoolBoard
-   Version 0.3.2 Layout
-========================================== */
-
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
 }
 
 body{
-    font-family:"Segoe UI",Arial,Helvetica,sans-serif;
-    background:#0f172a;
-    color:#fff;
+
+    background:#111;
+
+    color:white;
+
+    width:1920px;
+    height:1080px;
+
+    overflow:hidden;
 }
 
-/* ==========================================
-   HEADER
-========================================== */
+#boards{
 
-.headerRight{
-    display:flex;
-    justify-content:flex-end;
-    align-items:flex-start;
-    gap:28px;
-    padding:18px 28px 8px;
-}
-
-.headerInfo{
-    display:flex;
-    flex-direction:column;
-    gap:8px;
-    align-items:flex-end;
-}
-
-.headerInfo div{
-    background:#1e293b;
-    padding:8px 16px;
-    border-radius:12px;
-    min-width:240px;
-    font-size:17px;
-}
-
-.headerTime{
-    text-align:right;
-}
-
-#date{
-    color:#d1d5db;
-    font-size:21px;
-    margin-bottom:5px;
-}
-
-#clock{
-    font-size:44px;
-    font-weight:700;
-}
-
-#weather{
-    color:#7dd3fc;
-}
-
-/* ==========================================
-   DASHBOARD
-========================================== */
-
-main{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:16px;
-    padding:16px;
-}
 
-/* ==========================================
-   KARTEN
-========================================== */
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+
+    padding:20px;
+
+    height:100vh;
+}
 
 .board{
-    background:#1e293b;
-    border-radius:18px;
+
+    background:#1d1d1d;
+
+    border:2px solid #444;
+
+    border-radius:15px;
+
     overflow:hidden;
-    border:2px solid #3b82f6;
-    box-shadow:0 8px 20px rgba(0,0,0,.35);
 }
 
-.board h2{
-    background:#334155;
-    padding:12px;
+.board h1{
+
+    background:#2b2b2b;
+
     text-align:center;
-    font-size:22px;
-    border-bottom:1px solid #475569;
-}
 
-/* ==========================================
-   STUNDENPLAN
-========================================== */
+    padding:18px;
+
+    font-size:36px;
+}
 
 table{
-    width:100%;
-    table-layout:fixed;
-    border-collapse:collapse;
-}
 
-th{
-    background:#475569;
-    border:1px solid #64748b;
-    padding:8px 2px;
-    font-size:14px;
-    font-weight:700;
+    width:100%;
+
+    border-collapse:collapse;
+
+    table-layout:fixed;
 }
 
 td{
-    border:1px solid #475569;
-    padding:7px 2px;
+
+    border:1px solid #555;
+
+    padding:10px;
+
     text-align:center;
-    font-size:14px;
-    line-height:1.2;
-    overflow-wrap:break-word;
+
+    font-size:22px;
+
+    height:48px;
+
+    word-wrap:break-word;
 }
-
-/* Erste Spalte = Stunde */
-
-th:first-child,
-td:first-child{
-    width:42px;
-    font-size:12px;
-    font-weight:700;
-    color:#cbd5e1;
-}
-
-/* Zweite Spalte = Uhrzeit */
-
-th:nth-child(2),
-td:nth-child(2){
-    width:74px;
-    font-size:12px;
-    color:#cbd5e1;
-}
-
-tr:nth-child(even){
-    background:#233247;
-}
-
-tr:hover{
-    background:#31455f;
-}
-
-/* ==========================================
-   MARKIERUNGEN
-========================================== */
-
-.today-column{
-    background:#2563eb !important;
-    color:white !important;
-    font-weight:bold;
-}
-
-.current-lesson{
-    background:#16a34a !important;
-    color:white !important;
-    font-weight:bold;
-}
-
-/* ==========================================
-   FOOTER
-========================================== */
-
-footer{
-    text-align:center;
-    padding:12px;
-    border-top:2px solid #1f2937;
-    color:#94a3b8;
-    font-size:13px;
-}
-
-/* ==========================================
-   SCROLLBAR
-========================================== */
-
-::-webkit-scrollbar{
-    width:10px;
-}
-
-::-webkit-scrollbar-thumb{
-    background:#475569;
-    border-radius:8px;
-}
-
-/* ==========================================
-   RESPONSIVE
-========================================== */
-
-@media(max-width:1500px){
-
-    main{
-        grid-template-columns:1fr;
-    }
-
-}
-.current-row td{
-    background: rgba(34,197,94,.15);
-}
-
-.current-row td.current-lesson{
-    background:#22c55e !important;
-    color:#000;
-    font-weight:bold;
-}
-/* Elias Test */
